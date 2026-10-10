@@ -23,6 +23,7 @@
               400: '#34d399',
               500: '#10b981',
               600: '#059669',
+              700: '#047857',
             }
           }
         }
@@ -40,116 +41,115 @@
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      background: #10b981;
+      background: #059669;
       cursor: pointer;
-      box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);
-      border: 3px solid #022c22;
+      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.35);
+      border: 3px solid #ffffff;
       transition: transform 0.15s ease, background-color 0.15s ease;
     }
     input[type=range]::-webkit-slider-thumb:hover {
       transform: scale(1.15);
-      background: #34d399;
+      background: #047857;
     }
     input[type=range]::-moz-range-thumb {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      background: #10b981;
+      background: #059669;
       cursor: pointer;
-      box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);
-      border: 3px solid #022c22;
+      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.35);
+      border: 3px solid #ffffff;
       transition: transform 0.15s ease;
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-stone-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
 
   <!-- TOP BANNER -->
-  <div class="bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-emerald-500/10 border-b border-emerald-500/20 text-xs py-2 text-center text-emerald-300 font-medium px-4">
-    🐾 Nueva actualización: Calculadora de actividad e hidratación canina con soporte para razas y edades.
+  <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border-b border-emerald-100 text-xs py-2.5 text-center text-emerald-800 font-semibold px-4">
+    🐾 Nueva actualización: Calculadora de actividad e hidratación canina adaptada a razas, peso y edades.
   </div>
 
   <!-- NAVIGATION -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/25 via-slate-950/60 to-transparent pointer-events-none"></div>
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6 relative z-10">
-      <a href="#" class="flex items-center gap-3 text-2xl font-black tracking-tight text-white group">
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 ring-1 ring-emerald-500/40 group-hover:scale-105 transition-transform">🐶</span>
-        <span>Bark<span class="text-emerald-400">Scan</span></span>
+  <header class="relative bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 transition-all">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-900 group">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200 group-hover:scale-105 transition-transform">🐶</span>
+        <span>Bark<span class="text-emerald-600">Scan</span></span>
       </a>
 
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#features" class="hover:text-emerald-400 transition-colors">Características</a>
-        <a href="#calculator" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#features" class="hover:text-emerald-600 transition-colors">Características</a>
+        <a href="#calculator" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5">
           <span>Calculadora</span>
-          <span class="bg-emerald-500/20 text-emerald-300 text-[10px] px-2 py-0.5 rounded-full font-semibold">Avanzada</span>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-bold">Avanzada</span>
         </a>
-        <a href="#gallery" class="hover:text-emerald-400 transition-colors">Comunidad</a>
-        <a href="#testimonials" class="hover:text-emerald-400 transition-colors">Testimonios</a>
+        <a href="#gallery" class="hover:text-emerald-600 transition-colors">Comunidad</a>
+        <a href="#testimonials" class="hover:text-emerald-600 transition-colors">Testimonios</a>
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white font-medium">
+        <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 font-semibold">
           Simular rutina
         </a>
-        <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
+        <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all duration-200 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5">
           Acceso temprano
         </a>
       </div>
     </nav>
+  </header>
 
-    <!-- HERO SECTION -->
-    <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 md:pt-16 md:pb-32 relative z-10">
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/40 via-stone-50 to-stone-50 pt-12 pb-24 md:pt-16 md:pb-32 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
         <!-- Left Column: Copy -->
         <div class="lg:col-span-7 text-left space-y-6">
           <div class="inline-flex flex-wrap items-center gap-2">
-            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-100/80 text-emerald-800 ring-1 ring-emerald-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Biometría en tiempo real
             </span>
-            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-500/30">
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-100/80 text-cyan-800 ring-1 ring-cyan-300">
               💧 Alertas de hidratación
             </span>
-            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 ring-1 ring-amber-500/30">
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-100/80 text-amber-900 ring-1 ring-amber-300">
               🩺 Validado por veterinarios
             </span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
-            Detecta problemas de salud de tu perro <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400">antes de que aparezcan</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
+            Detecta problemas de salud de tu perro <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">antes de que aparezcan</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
+          <p class="text-lg sm:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
             BarkScan monitoriza la frecuencia cardíaca, hidratación corporal y ritmo de actividad de tu compañero en tiempo real. Anticipa golpes de calor, dolor silencioso y fatiga antes de que sea una urgencia.
           </p>
 
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <a href="#calculator" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
+            <a href="#calculator" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base transition-all duration-200 shadow-xl shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5">
               <span>Calcular plan de mi perro</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
-            <a href="#features" class="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 ring-1 ring-slate-800 hover:ring-slate-700 font-semibold text-base transition duration-200">
+            <a href="#features" class="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-700 ring-1 ring-slate-200 shadow-sm font-semibold text-base transition duration-200">
               Ver cómo funciona
             </a>
           </div>
 
           <!-- Social Proof -->
-          <div class="pt-4 flex items-center gap-4 text-xs text-slate-400">
+          <div class="pt-4 flex items-center gap-4 text-xs text-slate-600">
             <div class="flex -space-x-2 overflow-hidden">
-              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-slate-950 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar tutora" />
-              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-slate-950 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Avatar tutor" />
-              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-slate-950 object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Avatar veterinaria" />
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar tutora" />
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Avatar tutor" />
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Avatar veterinaria" />
             </div>
             <div>
-              <p class="font-semibold text-slate-200">+1,420 tutores y clínicas veterinarias</p>
+              <p class="font-bold text-slate-900">+1,420 tutores y clínicas veterinarias</p>
               <p class="text-slate-500">Unidos a la lista de acceso prioritario</p>
             </div>
           </div>
@@ -157,51 +157,48 @@
 
         <!-- Right Column: Hero Dog Photo with Floating Cards -->
         <div class="lg:col-span-5 relative">
-          <!-- Ambient Glow -->
-          <div class="absolute -inset-2 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-75"></div>
-
-          <!-- Main Hero Image Card -->
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-emerald-950/40 ring-1 ring-emerald-500/30 bg-slate-900 group">
+          <!-- Main Hero Image Card with rounded-3xl and soft warm shadows -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-emerald-950/10 ring-1 ring-slate-200/80 bg-white group">
             <img 
               src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=80" 
               alt="Perro feliz en la naturaleza bajo la luz cálida del sol" 
-              class="w-full h-[440px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              class="w-full h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
             <!-- Floating Status Badge (Top-Right) -->
-            <div class="absolute top-4 right-4 bg-slate-900/85 backdrop-blur-md px-3.5 py-1.5 rounded-2xl ring-1 ring-white/10 flex items-center gap-2 text-xs font-semibold shadow-lg">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span class="text-emerald-300">Collar Activo</span>
+            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-2xl ring-1 ring-slate-200/80 flex items-center gap-2 text-xs font-bold text-slate-800 shadow-lg">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-emerald-700">Collar Activo</span>
             </div>
 
             <!-- Bottom Floating Metrics Card -->
-            <div class="absolute bottom-4 inset-x-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl ring-1 ring-white/10 shadow-xl space-y-3">
-              <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+            <div class="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl ring-1 ring-slate-200/80 shadow-xl space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
                 <div class="flex items-center gap-2">
-                  <span class="text-lg">🐕</span>
+                  <span class="text-xl">🐕</span>
                   <div>
-                    <div class="text-xs font-bold text-white">Oliver · Golden Retriever</div>
-                    <div class="text-[11px] text-slate-400">Adulto (3 años) · 28 kg</div>
+                    <div class="text-xs font-bold text-slate-900">Oliver · Golden Retriever</div>
+                    <div class="text-[11px] text-slate-500">Adulto (3 años) · 28 kg</div>
                   </div>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/20 text-emerald-300">
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-100 text-emerald-800">
                   Estado óptimo
                 </span>
               </div>
 
               <div class="grid grid-cols-3 gap-2 text-center">
-                <div class="p-2 rounded-xl bg-slate-800/50">
-                  <div class="text-[10px] text-slate-400 font-medium">Pulso reposo</div>
-                  <div class="text-sm font-bold text-emerald-400 font-num">72 bpm</div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Pulso reposo</div>
+                  <div class="text-sm font-bold text-emerald-600 font-num">72 bpm</div>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-800/50">
-                  <div class="text-[10px] text-slate-400 font-medium">Hidratación</div>
-                  <div class="text-sm font-bold text-cyan-400 font-num">98 %</div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Hidratación</div>
+                  <div class="text-sm font-bold text-cyan-600 font-num">98 %</div>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-800/50">
-                  <div class="text-[10px] text-slate-400 font-medium">Paseo hoy</div>
-                  <div class="text-sm font-bold text-violet-400 font-num">65 min</div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Paseo hoy</div>
+                  <div class="text-sm font-bold text-violet-600 font-num">65 min</div>
                 </div>
               </div>
             </div>
@@ -210,18 +207,18 @@
 
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- FEATURES SECTION WITH INTEGRATED DOG PHOTOGRAPHY -->
   <section class="max-w-7xl mx-auto px-6 py-24 relative" id="features">
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/30 uppercase tracking-wider">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300 uppercase tracking-wider">
         Tecnología Médica Veterinaria
       </span>
-      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
         Todo lo que tu perro no puede decirte
       </h2>
-      <p class="text-slate-400 text-lg">
+      <p class="text-slate-600 text-lg">
         Los perros ocultan por instinto los primeros signos de fatiga y dolor. BarkScan traduce sus señales biométricas en datos claros para que tomes acción a tiempo.
       </p>
     </div>
@@ -229,87 +226,87 @@
     <div class="grid md:grid-cols-3 gap-8">
       
       <!-- Feature Card 1: Frecuencia cardíaca -->
-      <div class="group rounded-3xl bg-slate-900/90 ring-1 ring-slate-800 hover:ring-emerald-500/50 transition-all duration-300 shadow-xl overflow-hidden flex flex-col hover:-translate-y-1">
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-emerald-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
         <div class="relative h-56 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80" 
             alt="Perro descansando placenteramente en una cama acogedora" 
             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
-          <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-emerald-400 ring-1 ring-emerald-500/30 flex items-center gap-1.5">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-emerald-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
             <span>❤️</span> Biometría cardíaca
           </div>
-          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-950/80 px-2.5 py-1 rounded-lg text-emerald-300 ring-1 ring-emerald-500/30">
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
             68 bpm en reposo
           </div>
         </div>
         <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
           <div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Frecuencia cardíaca en reposo</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">Frecuencia cardíaca en reposo</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
               Registro continuo y de alta precisión del pulso en reposo. Detecta con días y semanas de antelación arritmias incipientes, sobreesfuerzo, picos de estrés o dolor articular silencioso.
             </p>
           </div>
-          <div class="pt-2 border-t border-slate-800/80 text-xs font-semibold text-emerald-400 flex items-center gap-1">
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-emerald-700 flex items-center gap-1">
             <span>✓ Alerta inmediata si supera rangos de raza</span>
           </div>
         </div>
       </div>
 
       <!-- Feature Card 2: Golpe de calor e hidratación -->
-      <div class="group rounded-3xl bg-slate-900/90 ring-1 ring-slate-800 hover:ring-cyan-500/50 transition-all duration-300 shadow-xl overflow-hidden flex flex-col hover:-translate-y-1">
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-cyan-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
         <div class="relative h-56 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80" 
             alt="Perro activo y feliz jadeando saludablemente en el campo" 
             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
-          <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-cyan-400 ring-1 ring-cyan-500/30 flex items-center gap-1.5">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-cyan-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
             <span>💧</span> Termo-hidratación
           </div>
-          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-950/80 px-2.5 py-1 rounded-lg text-cyan-300 ring-1 ring-cyan-500/30">
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
             Riesgo térmico: Seguro
           </div>
         </div>
         <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
           <div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Alertas de golpe de calor e hidratación</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">Alertas de golpe de calor e hidratación</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
               Algoritmo térmico adaptado a la temperatura ambiental, humedad y espesor del pelaje. Te envía una notificación con aviso sonoro antes de que el perro entre en deshidratación crítica.
             </p>
           </div>
-          <div class="pt-2 border-t border-slate-800/80 text-xs font-semibold text-cyan-400 flex items-center gap-1">
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-cyan-700 flex items-center gap-1">
             <span>✓ Especial protección en razas braquicéfalas</span>
           </div>
         </div>
       </div>
 
       <!-- Feature Card 3: Mapa de paseos y actividad -->
-      <div class="group rounded-3xl bg-slate-900/90 ring-1 ring-slate-800 hover:ring-violet-500/50 transition-all duration-300 shadow-xl overflow-hidden flex flex-col hover:-translate-y-1">
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-violet-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
         <div class="relative h-56 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80" 
             alt="Perro corriendo feliz en un prado verde durante un paseo activo" 
             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
-          <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-violet-400 ring-1 ring-violet-500/30 flex items-center gap-1.5">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-violet-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
             <span>🗺️</span> GPS & Rutinas
           </div>
-          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-950/80 px-2.5 py-1 rounded-lg text-violet-300 ring-1 ring-violet-500/30">
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
             5.4 km / 78 min activos
           </div>
         </div>
         <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
           <div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">Mapa de paseos y calidad del ejercicio</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-violet-600 transition-colors">Mapa de paseos y calidad del ejercicio</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
               Mapeo de rutas con índice de calidad física: diferencia entre paseo olfativo de baja intensidad y sprint de alta exigencia, adaptando el descanso para evitar lesiones musculares.
             </p>
           </div>
-          <div class="pt-2 border-t border-slate-800/80 text-xs font-semibold text-violet-400 flex items-center gap-1">
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-violet-700 flex items-center gap-1">
             <span>✓ Comparativa con el percentil de su raza y edad</span>
           </div>
         </div>
@@ -318,23 +315,23 @@
     </div>
   </section>
 
-  <!-- ADVANCED ACTIVITY CALCULATOR SECTION -->
+  <!-- ADVANCED ACTIVITY CALCULATOR SECTION (LIGHT THEME) -->
   <section class="max-w-6xl mx-auto px-6 py-20 relative" id="calculator">
-    <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/95 to-slate-950 p-8 sm:p-12 ring-1 ring-slate-800 shadow-2xl shadow-emerald-950/30 overflow-hidden">
+    <div class="relative rounded-3xl bg-white p-8 sm:p-12 ring-1 ring-slate-200/80 shadow-2xl shadow-slate-200/60 overflow-hidden">
       
-      <!-- Decorative Backdrop Circles -->
-      <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Decorative Background Glow -->
+      <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-cyan-100/60 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- Calculator Header -->
       <div class="relative z-10 text-center max-w-2xl mx-auto mb-10 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/30">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300">
           <span>⚡</span> Algoritmo Clínico en Tiempo Real
         </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
           Calculadora Avanzada de Actividad e Hidratación
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
+        <p class="text-slate-600 text-sm sm:text-base">
           Personaliza los parámetros biológicos de tu perro para obtener su prescripción diaria recomendada de ejercicio, ingesta hídrica e intensidad segura.
         </p>
       </div>
@@ -343,16 +340,16 @@
       <div class="relative z-10 grid lg:grid-cols-12 gap-8 items-start">
         
         <!-- Inputs Column (7 cols) -->
-        <div class="lg:col-span-7 bg-slate-950/70 p-6 sm:p-8 rounded-3xl ring-1 ring-slate-800 space-y-6">
+        <div class="lg:col-span-7 bg-slate-50/80 p-6 sm:p-8 rounded-3xl ring-1 ring-slate-200 space-y-6">
           
           <!-- Input 1: Peso Corporal (Slider + Number Sync) -->
           <div class="space-y-3">
             <div class="flex items-center justify-between">
-              <label for="weightInput" class="text-sm font-bold text-slate-200 flex items-center gap-2">
+              <label for="weightInput" class="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <span>⚖️ Peso Corporal</span>
-                <span class="text-xs font-normal text-slate-400">(1 a 60 kg)</span>
+                <span class="text-xs font-normal text-slate-500">(1 a 60 kg)</span>
               </label>
-              <div class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-xl ring-1 ring-emerald-500/40 font-num">
+              <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl ring-1 ring-slate-200 shadow-sm font-num">
                 <input 
                   id="weightNumber" 
                   type="number" 
@@ -360,9 +357,9 @@
                   max="60" 
                   step="0.5" 
                   value="18" 
-                  class="w-14 bg-transparent text-emerald-400 font-bold text-right text-lg outline-none font-num"
+                  class="w-14 bg-transparent text-emerald-700 font-bold text-right text-lg outline-none font-num"
                 />
-                <span class="text-slate-400 text-sm font-semibold">kg</span>
+                <span class="text-slate-500 text-sm font-semibold">kg</span>
               </div>
             </div>
 
@@ -373,10 +370,10 @@
               max="60" 
               value="18" 
               step="0.5" 
-              class="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer outline-none"
+              class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer outline-none"
             />
 
-            <div class="flex justify-between text-[11px] font-num text-slate-500 font-semibold px-1">
+            <div class="flex justify-between text-[11px] font-num text-slate-400 font-semibold px-1">
               <span>1 kg</span>
               <span>15 kg</span>
               <span>30 kg</span>
@@ -387,21 +384,21 @@
 
           <!-- Input 2: Edad del perro -->
           <div class="space-y-2">
-            <label for="ageSelect" class="text-sm font-bold text-slate-200 flex items-center gap-2">
+            <label class="text-sm font-bold text-slate-800 flex items-center gap-2">
               <span>🎂 Etapa y Edad</span>
             </label>
             <div class="grid grid-cols-3 gap-2" id="ageButtonsGroup">
-              <button type="button" data-val="puppy" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:ring-slate-700">
+              <button type="button" data-val="puppy" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
                 <div class="text-base mb-1">🍼</div>
                 <div>Cachorro</div>
                 <div class="text-[10px] text-slate-500 font-normal">&lt; 1 año</div>
               </button>
-              <button type="button" data-val="adult" class="age-btn active-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-emerald-500/60 bg-emerald-500/20 text-emerald-300">
+              <button type="button" data-val="adult" class="age-btn active-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-2 ring-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
                 <div class="text-base mb-1">🐕</div>
                 <div>Adulto</div>
-                <div class="text-[10px] text-emerald-400/70 font-normal">1 a 7 años</div>
+                <div class="text-[10px] text-emerald-100 font-normal">1 a 7 años</div>
               </button>
-              <button type="button" data-val="senior" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:ring-slate-700">
+              <button type="button" data-val="senior" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
                 <div class="text-base mb-1">🦮</div>
                 <div>Senior</div>
                 <div class="text-[10px] text-slate-500 font-normal">&gt; 7 años</div>
@@ -412,13 +409,13 @@
 
           <!-- Input 3: Raza / Nivel de energía -->
           <div class="space-y-2">
-            <label for="energySelect" class="text-sm font-bold text-slate-200 flex items-center justify-between">
+            <label for="energySelect" class="text-sm font-bold text-slate-800 flex items-center justify-between">
               <span class="flex items-center gap-2">⚡ Nivel de Energía / Raza</span>
             </label>
             <div class="relative">
               <select 
                 id="energySelect" 
-                class="w-full bg-slate-900 text-slate-100 text-xs sm:text-sm font-semibold rounded-2xl px-4 py-3.5 ring-1 ring-slate-800 focus:ring-emerald-500 outline-none appearance-none cursor-pointer pr-10"
+                class="w-full bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-2xl px-4 py-3.5 ring-1 ring-slate-200 focus:ring-2 focus:ring-emerald-500 shadow-sm outline-none appearance-none cursor-pointer pr-10"
               >
                 <option value="low">Baja energía / Braquicéfalos (ej. Bulldog, Pug, Basset, Galgo de descanso)</option>
                 <option value="moderate" selected>Energía moderada (ej. Golden, Labrador, Beagle, Mestizo familiar)</option>
@@ -433,19 +430,19 @@
 
           <!-- Input 4: Altura a la cruz o Tamaño -->
           <div class="space-y-2">
-            <label for="sizeSelect" class="text-sm font-bold text-slate-200 flex items-center gap-2">
+            <label class="text-sm font-bold text-slate-800 flex items-center gap-2">
               <span>📏 Tamaño / Altura a la cruz</span>
             </label>
             <div class="grid grid-cols-3 gap-2" id="sizeButtonsGroup">
-              <button type="button" data-size="mini" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:ring-slate-700">
+              <button type="button" data-size="mini" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
                 <div class="text-sm mb-0.5">🐾 Mini</div>
                 <div class="text-[10px] text-slate-500 font-normal">&lt; 30 cm</div>
               </button>
-              <button type="button" data-size="medium" class="size-btn active-size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-emerald-500/60 bg-emerald-500/20 text-emerald-300">
+              <button type="button" data-size="medium" class="size-btn active-size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-2 ring-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
                 <div class="text-sm mb-0.5">🐕 Mediano</div>
-                <div class="text-[10px] text-emerald-400/70 font-normal">30 - 55 cm</div>
+                <div class="text-[10px] text-emerald-100 font-normal">30 - 55 cm</div>
               </button>
-              <button type="button" data-size="large" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:ring-slate-700">
+              <button type="button" data-size="large" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
                 <div class="text-sm mb-0.5">🐺 Grande</div>
                 <div class="text-[10px] text-slate-500 font-normal">&gt; 55 cm</div>
               </button>
@@ -459,63 +456,63 @@
         <div class="lg:col-span-5 space-y-4">
           
           <!-- Main Output Metric: Minutos de Actividad -->
-          <div class="p-6 rounded-3xl bg-slate-950/80 ring-1 ring-emerald-500/40 relative overflow-hidden shadow-xl">
+          <div class="p-6 rounded-3xl bg-emerald-50/70 ring-1 ring-emerald-200/80 relative overflow-hidden shadow-sm">
             <div class="flex items-center justify-between mb-3">
-              <div class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Actividad y Paseos
+              <div class="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Actividad y Paseos
               </div>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold" id="activityPillsCount">2-3 paseos/día</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold" id="activityPillsCount">2-3 paseos/día</span>
             </div>
             
             <div class="flex items-baseline gap-2 mb-2">
-              <span id="outputMinutes" class="text-5xl sm:text-6xl font-bold text-emerald-400 font-num">70</span>
-              <span class="text-xl font-semibold text-slate-300">minutos / día</span>
+              <span id="outputMinutes" class="text-5xl sm:text-6xl font-bold text-emerald-600 font-num">70</span>
+              <span class="text-xl font-bold text-slate-800">minutos / día</span>
             </div>
             
-            <p id="outputActivityDesc" class="text-xs text-slate-400 leading-relaxed">
+            <p id="outputActivityDesc" class="text-xs text-slate-600 leading-relaxed font-medium">
               Tiempo total recomendado de paseos estructurados y ejercicio activo ajustado a su energía y edad.
             </p>
           </div>
 
           <!-- Secondary Metric: Agua Estimada -->
-          <div class="p-6 rounded-3xl bg-slate-950/80 ring-1 ring-cyan-500/40 relative overflow-hidden shadow-xl">
+          <div class="p-6 rounded-3xl bg-cyan-50/70 ring-1 ring-cyan-200/80 relative overflow-hidden shadow-sm">
             <div class="flex items-center justify-between mb-3">
-              <div class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Ingesta Diaria de Agua
+              <div class="text-xs font-bold text-cyan-800 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-cyan-600"></span> Ingesta Diaria de Agua
               </div>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-semibold" id="waterBowlsCount">~4.5 cuencos</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 font-bold" id="waterBowlsCount">~4.5 cuencos</span>
             </div>
 
             <div class="flex items-baseline gap-2 mb-2">
-              <span id="outputWaterMl" class="text-4xl sm:text-5xl font-bold text-cyan-400 font-num">1.170</span>
-              <span class="text-lg font-semibold text-slate-300">ml / día</span>
+              <span id="outputWaterMl" class="text-4xl sm:text-5xl font-bold text-cyan-600 font-num">1.170</span>
+              <span class="text-lg font-bold text-slate-800">ml / día</span>
             </div>
 
-            <p id="outputWaterDesc" class="text-xs text-slate-400 leading-relaxed">
+            <p id="outputWaterDesc" class="text-xs text-slate-600 leading-relaxed font-medium">
               Consumo hídrico mínimo estimado. Aumentar un 20% en días cálidos o sesiones intensas.
             </p>
           </div>
 
           <!-- Tertiary Metric: Indicador de Intensidad -->
-          <div class="p-6 rounded-3xl bg-slate-950/80 ring-1 ring-slate-800 relative overflow-hidden shadow-xl">
-            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <div class="p-6 rounded-3xl bg-amber-50/70 ring-1 ring-amber-200/80 relative overflow-hidden shadow-sm">
+            <div class="text-xs font-bold text-amber-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
               <span>🎯</span> Intensidad Recomendada
             </div>
 
             <div class="flex items-center gap-3 mb-2">
-              <span id="intensityBadge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/30">
+              <span id="intensityBadge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-100 text-amber-900 ring-1 ring-amber-300">
                 Moderada · Caminata dinámica
               </span>
             </div>
 
-            <p id="outputIntensityAdvice" class="text-xs text-slate-300 leading-relaxed">
+            <p id="outputIntensityAdvice" class="text-xs text-slate-700 leading-relaxed font-medium">
               Paseos activos con interacción sensorial y juego moderado sin impacto repetitivo.
             </p>
           </div>
 
           <!-- Veterinary Tip Box -->
-          <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/20 text-xs text-emerald-200/90 flex items-start gap-3">
-            <span class="text-lg leading-none">🩺</span>
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-start gap-3 shadow-sm">
+            <span class="text-xl leading-none">🩺</span>
             <div id="vetAdviceText" class="leading-relaxed">
               <strong>Consejo clínico:</strong> En perros adultos de energía moderada, divide el ejercicio en 2 paseos principales evitando las horas de máxima insolación.
             </div>
@@ -530,13 +527,13 @@
   <!-- COMMUNITY GALLERY & REAL DOG MOMENTS SECTION -->
   <section class="max-w-7xl mx-auto px-6 py-20 relative" id="gallery">
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/30 uppercase tracking-wider">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800 ring-1 ring-cyan-300 uppercase tracking-wider">
         Comunidad BarkScan
       </span>
-      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
         Perros felices, activos y monitorizados
       </h2>
-      <p class="text-slate-400 text-lg">
+      <p class="text-slate-600 text-lg">
         Cada perro tiene su propio ritmo biológico. Descubre cómo BarkScan acompaña a perros de todos los tamaños, energías y etapas de vida.
       </p>
     </div>
@@ -545,70 +542,70 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <!-- Photo 1: Juego libre -->
-      <div class="group relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-800 bg-slate-900 aspect-square">
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
         <img 
           src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80" 
           alt="Dos perros jugando alegremente en el parque" 
           class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-        <div class="absolute bottom-4 inset-x-4">
-          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/30 mb-1.5">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/90 text-white shadow-sm mb-1.5">
             Socialización activa
           </span>
           <h4 class="text-sm font-bold text-white">Thor & Maya</h4>
-          <p class="text-xs text-slate-300">Paseo matutino · 55 min completados</p>
+          <p class="text-xs text-slate-200">Paseo matutino · 55 min completados</p>
         </div>
       </div>
 
       <!-- Photo 2: Sonrisa canina -->
-      <div class="group relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-800 bg-slate-900 aspect-square">
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
         <img 
           src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" 
           alt="Perro sonriente descansando feliz en la hierba" 
           class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-        <div class="absolute bottom-4 inset-x-4">
-          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/20 text-cyan-300 ring-1 ring-cyan-500/30 mb-1.5">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-600/90 text-white shadow-sm mb-1.5">
             Hidratación perfecta
           </span>
           <h4 class="text-sm font-bold text-white">Nala</h4>
-          <p class="text-xs text-slate-300">Recuperación post-juego en sombra</p>
+          <p class="text-xs text-slate-200">Recuperación post-juego en sombra</p>
         </div>
       </div>
 
       <!-- Photo 3: Cachorro en exploración -->
-      <div class="group relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-800 bg-slate-900 aspect-square">
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
         <img 
           src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80" 
           alt="Cachorro descubriendo el entorno al aire libre" 
           class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-        <div class="absolute bottom-4 inset-x-4">
-          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/20 text-violet-300 ring-1 ring-violet-500/30 mb-1.5">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-600/90 text-white shadow-sm mb-1.5">
             Cachorro · Crecimiento
           </span>
           <h4 class="text-sm font-bold text-white">Milo (6 meses)</h4>
-          <p class="text-xs text-slate-300">Micro-paseos olfativos guiados</p>
+          <p class="text-xs text-slate-200">Micro-paseos olfativos guiados</p>
         </div>
       </div>
 
       <!-- Photo 4: Senior sereno -->
-      <div class="group relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-800 bg-slate-900 aspect-square">
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
         <img 
           src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=600&q=80" 
           alt="Perro senior descansando con mirada tranquila y serena" 
           class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-        <div class="absolute bottom-4 inset-x-4">
-          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/30 mb-1.5">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-600/90 text-white shadow-sm mb-1.5">
             Senior · Cuidado articular
           </span>
           <h4 class="text-sm font-bold text-white">Rocky (9 años)</h4>
-          <p class="text-xs text-slate-300">Paseo suave · Cero sobrecarga</p>
+          <p class="text-xs text-slate-200">Paseo suave · Cero sobrecarga</p>
         </div>
       </div>
 
@@ -618,13 +615,13 @@
   <!-- TESTIMONIALS SECTION -->
   <section class="max-w-7xl mx-auto px-6 py-20 relative" id="testimonials">
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-violet-500/10 text-violet-400 ring-1 ring-violet-500/30 uppercase tracking-wider">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-violet-100 text-violet-800 ring-1 ring-violet-300 uppercase tracking-wider">
         Historias Reales
       </span>
-      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
         Lo que opinan tutores y veterinarios
       </h2>
-      <p class="text-slate-400 text-lg">
+      <p class="text-slate-600 text-lg">
         La tranquilidad de saber exactamente cómo se siente tu mejor amigo en cada momento.
       </p>
     </div>
@@ -632,70 +629,70 @@
     <div class="grid md:grid-cols-3 gap-8">
       
       <!-- Testimonial 1 -->
-      <div class="p-8 rounded-3xl bg-slate-900/80 ring-1 ring-slate-800 shadow-xl flex flex-col justify-between space-y-6">
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
         <div class="space-y-4">
-          <div class="flex items-center gap-1 text-amber-400 text-sm">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
             ★★★★★
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed italic">
+          <p class="text-slate-700 text-sm leading-relaxed italic">
             “BarkScan detectó una leve deshidratación tras una excursión por la sierra antes de que Max mostrara síntomas visibles de fatiga. Saber con precisión cuánta agua necesita y los minutos recomendados según su peso nos ha dado una tranquilidad absoluta.”
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
           <img 
             src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=120&q=80" 
             alt="Golden Retriever de Mateo" 
             class="w-12 h-12 rounded-2xl object-cover ring-2 ring-emerald-500/30"
           />
           <div>
-            <div class="text-sm font-bold text-white">Mateo & Max</div>
-            <div class="text-xs text-slate-400">Golden Retriever · 3 años (29 kg)</div>
+            <div class="text-sm font-bold text-slate-900">Mateo & Max</div>
+            <div class="text-xs text-slate-500">Golden Retriever · 3 años (29 kg)</div>
           </div>
         </div>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="p-8 rounded-3xl bg-slate-900/80 ring-1 ring-slate-800 shadow-xl flex flex-col justify-between space-y-6">
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
         <div class="space-y-4">
-          <div class="flex items-center gap-1 text-amber-400 text-sm">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
             ★★★★★
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed italic">
+          <p class="text-slate-700 text-sm leading-relaxed italic">
             “Al ser braquicéfalo, controlar la temperatura y la intensidad en los paseos veraniegos era una pesadilla constante. Las alertas de intensidad olfativa de BarkScan nos han permitido disfrutar de la calle sin riesgo respiratorio.”
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
           <img 
             src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=120&q=80" 
             alt="Bulldog de Laura" 
             class="w-12 h-12 rounded-2xl object-cover ring-2 ring-cyan-500/30"
           />
           <div>
-            <div class="text-sm font-bold text-white">Laura & Bruno</div>
-            <div class="text-xs text-slate-400">Bulldog Francés · 5 años (13 kg)</div>
+            <div class="text-sm font-bold text-slate-900">Laura & Bruno</div>
+            <div class="text-xs text-slate-500">Bulldog Francés · 5 años (13 kg)</div>
           </div>
         </div>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="p-8 rounded-3xl bg-slate-900/80 ring-1 ring-slate-800 shadow-xl flex flex-col justify-between space-y-6">
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
         <div class="space-y-4">
-          <div class="flex items-center gap-1 text-amber-400 text-sm">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
             ★★★★★
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed italic">
+          <p class="text-slate-700 text-sm leading-relaxed italic">
             “Kira tiene una energía desbordante de raza de trabajo. La calculadora nos clavó el tiempo de actividad y la intensidad para evitar que llegue sobreestimulada a casa. La monitorización de pulso es una maravilla científica.”
           </p>
         </div>
-        <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
           <img 
             src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?auto=format&fit=crop&w=120&q=80" 
             alt="Border Collie de Carlos" 
             class="w-12 h-12 rounded-2xl object-cover ring-2 ring-violet-500/30"
           />
           <div>
-            <div class="text-sm font-bold text-white">Carlos & Kira</div>
-            <div class="text-xs text-slate-400">Border Collie · 2 años (19 kg)</div>
+            <div class="text-sm font-bold text-slate-900">Carlos & Kira</div>
+            <div class="text-xs text-slate-500">Border Collie · 2 años (19 kg)</div>
           </div>
         </div>
       </div>
@@ -705,17 +702,17 @@
 
   <!-- WAITLIST SECTION -->
   <section id="waitlist" class="max-w-4xl mx-auto px-6 py-24 text-center relative">
-    <div class="relative rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 p-8 sm:p-14 ring-1 ring-emerald-500/30 shadow-2xl overflow-hidden">
+    <div class="relative rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-8 sm:p-14 ring-1 ring-emerald-200 shadow-2xl shadow-emerald-950/5 overflow-hidden">
       
       <div class="max-w-2xl mx-auto space-y-4">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300">
           🚀 Acceso prioritario cerrado
         </span>
-        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
           Sé de los primeros en probar BarkScan
         </h2>
-        <p class="text-slate-400 text-base sm:text-lg">
-          Lanzamiento anticipado con un <strong class="text-emerald-400 font-bold">40% de descuento vitalicio</strong> y kit de bienvenida para los miembros de la lista de espera.
+        <p class="text-slate-600 text-base sm:text-lg">
+          Lanzamiento anticipado con un <strong class="text-emerald-700 font-bold">40% de descuento vitalicio</strong> y kit de bienvenida para los miembros de la lista de espera.
         </p>
         
         <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3 justify-center pt-4 max-w-lg mx-auto">
@@ -723,19 +720,19 @@
             type="email" 
             required 
             placeholder="Introduce tu correo electrónico..."
-            class="px-5 py-3.5 rounded-2xl bg-slate-950 ring-1 ring-slate-700 focus:ring-2 focus:ring-emerald-500 text-sm outline-none flex-1 min-w-0 text-white placeholder-slate-500" 
+            class="px-5 py-3.5 rounded-2xl bg-white ring-1 ring-slate-300 focus:ring-2 focus:ring-emerald-500 text-sm outline-none flex-1 min-w-0 text-slate-900 placeholder-slate-400 shadow-sm" 
           />
           <button 
             type="submit" 
-            class="px-7 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 whitespace-nowrap"
+            class="px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all duration-200 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5 whitespace-nowrap"
           >
             Unirme ahora
           </button>
         </form>
 
-        <p id="formMessage" class="mt-4 text-sm font-semibold h-5 transition-opacity opacity-0 text-emerald-400"></p>
+        <p id="formMessage" class="mt-4 text-sm font-semibold h-5 transition-opacity opacity-0 text-emerald-700"></p>
 
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-medium">
           <span>✓ Sin spam</span>
           <span>✓ Cancelación en cualquier momento</span>
           <span>✓ Soporte veterinario incluido</span>
@@ -745,17 +742,17 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-900 py-12 px-6 bg-slate-950 text-slate-500 text-sm">
+  <footer class="border-t border-slate-200/80 py-12 px-6 bg-white text-slate-500 text-sm">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-2 text-lg font-bold text-white">
-        <span>🐶</span> Bark<span class="text-emerald-400">Scan</span>
-        <span class="text-xs text-slate-500 font-normal ml-2">© 2026 Todos los derechos reservados</span>
+      <div class="flex items-center gap-2 text-lg font-bold text-slate-900">
+        <span>🐶</span> Bark<span class="text-emerald-600">Scan</span>
+        <span class="text-xs text-slate-400 font-normal ml-2">© 2026 Todos los derechos reservados</span>
       </div>
-      <div class="flex items-center gap-6 text-xs text-slate-400">
-        <a href="#features" class="hover:text-emerald-400 transition-colors">Características</a>
-        <a href="#calculator" class="hover:text-emerald-400 transition-colors">Calculadora</a>
-        <a href="#gallery" class="hover:text-emerald-400 transition-colors">Comunidad</a>
-        <a href="#waitlist" class="hover:text-emerald-400 transition-colors">Lista de espera</a>
+      <div class="flex items-center gap-6 text-xs text-slate-500 font-medium">
+        <a href="#features" class="hover:text-emerald-600 transition-colors">Características</a>
+        <a href="#calculator" class="hover:text-emerald-600 transition-colors">Calculadora</a>
+        <a href="#gallery" class="hover:text-emerald-600 transition-colors">Comunidad</a>
+        <a href="#waitlist" class="hover:text-emerald-600 transition-colors">Lista de espera</a>
       </div>
     </div>
   </footer>
@@ -783,29 +780,39 @@
     const outputIntensityAdvice = document.getElementById('outputIntensityAdvice');
     const vetAdviceText = document.getElementById('vetAdviceText');
 
-    // Age button handler
+    // Age button handler (Light theme active/inactive classes)
     ageButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         ageButtons.forEach(b => {
-          b.classList.remove('active-btn', 'ring-emerald-500/60', 'bg-emerald-500/20', 'text-emerald-300');
-          b.classList.add('ring-slate-800', 'bg-slate-900', 'text-slate-300');
+          b.classList.remove('active-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+          b.classList.add('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+          const sub = b.querySelector('div:last-child');
+          if (sub) { sub.classList.remove('text-emerald-100'); sub.classList.add('text-slate-500'); }
         });
-        btn.classList.add('active-btn', 'ring-emerald-500/60', 'bg-emerald-500/20', 'text-emerald-300');
-        btn.classList.remove('ring-slate-800', 'bg-slate-900', 'text-slate-300');
+        btn.classList.add('active-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+        btn.classList.remove('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        const subActive = btn.querySelector('div:last-child');
+        if (subActive) { subActive.classList.remove('text-slate-500'); subActive.classList.add('text-emerald-100'); }
+
         ageValueInput.value = btn.getAttribute('data-val');
         calculatePlan();
       });
     });
 
-    // Size button handler
+    // Size button handler (Light theme active/inactive classes)
     sizeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         sizeButtons.forEach(b => {
-          b.classList.remove('active-size-btn', 'ring-emerald-500/60', 'bg-emerald-500/20', 'text-emerald-300');
-          b.classList.add('ring-slate-800', 'bg-slate-900', 'text-slate-300');
+          b.classList.remove('active-size-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+          b.classList.add('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+          const sub = b.querySelector('div:last-child');
+          if (sub) { sub.classList.remove('text-emerald-100'); sub.classList.add('text-slate-500'); }
         });
-        btn.classList.add('active-size-btn', 'ring-emerald-500/60', 'bg-emerald-500/20', 'text-emerald-300');
-        btn.classList.remove('ring-slate-800', 'bg-slate-900', 'text-slate-300');
+        btn.classList.add('active-size-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+        btn.classList.remove('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        const subActive = btn.querySelector('div:last-child');
+        if (subActive) { subActive.classList.remove('text-slate-500'); subActive.classList.add('text-emerald-100'); }
+
         sizeValueInput.value = btn.getAttribute('data-size');
         calculatePlan();
       });
@@ -891,12 +898,11 @@
       if (age === 'senior') mlPerKg += 4; // Función renal y prevención
 
       let totalWaterMl = Math.round(weight * mlPerKg);
-      // Formato con punto de miles
       outputWaterMl.textContent = totalWaterMl.toLocaleString('es-ES');
       const bowls = (totalWaterMl / 250).toFixed(1);
       waterBowlsCount.textContent = `~${bowls} cuencos (250ml)`;
 
-      // 3. Indicador de Intensidad Recomendada y Consejo Veterinario
+      // 3. Indicador de Intensidad Recomendada y Consejo Veterinario (Light theme badges)
       let intensityText = "";
       let intensityClass = "";
       let intensityAdvice = "";
@@ -904,23 +910,23 @@
 
       if (energy === 'low' || (age === 'senior' && energy !== 'high')) {
         intensityText = "Baja · Paseos olfativos suaves";
-        intensityClass = "bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/30";
+        intensityClass = "bg-amber-100 text-amber-900 ring-1 ring-amber-300";
         intensityAdvice = "Paseos olfativos a ritmo tranquilo, estimulación mental con juegos de olfato y descanso en sombra. Proteger de golpes de calor.";
         vetNote = `<strong>Consejo clínico:</strong> ${energy === 'low' ? 'Las razas braquicéfalas y de baja energía tienen riesgo de sobrecalentamiento. Monitorea su frecuencia respiratoria y evita las horas de sol directo.' : 'En perros mayores de 7 años, la estimulación cognitiva y los paseos olfativos calman la ansiedad y cuidan sus articulaciones sin sobrecargarlas.'}`;
       } else if (age === 'puppy') {
         intensityText = "Baja-Moderada · Juego y socialización";
-        intensityClass = "bg-cyan-500/20 text-cyan-300 ring-1 ring-cyan-500/30";
+        intensityClass = "bg-cyan-100 text-cyan-900 ring-1 ring-cyan-300";
         intensityAdvice = "Juego libre en césped, estimulación cognitiva y pausas de descanso frecuentes. Evitar el cobro compulsivo de pelota.";
         vetNote = "<strong>Consejo clínico:</strong> En cachorros menores de 1 año, los paseos deben priorizar la socialización y el enriquecimiento ambiental por encima del desgaste cardiovascular.";
       } else if (energy === 'high' && age === 'adult') {
         intensityText = "Alta · Ejercicio dinámico y demanda";
-        intensityClass = "bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/30";
+        intensityClass = "bg-emerald-100 text-emerald-900 ring-1 ring-emerald-300";
         intensityAdvice = "Carrera continua, cobro activo, senderismo o agility. Requiere calentamiento progresivo y abundante agua fresca.";
         vetNote = "<strong>Consejo clínico:</strong> Los perros de trabajo toleran alta demanda pero pueden ignorar la fatiga. BarkScan te avisará cuando su pulso cardíaco supere el umbral seguro.";
       } else {
         // Adulto moderado
         intensityText = "Moderada · Caminata activa y trote";
-        intensityClass = "bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/30";
+        intensityClass = "bg-emerald-100 text-emerald-900 ring-1 ring-emerald-300";
         intensityAdvice = "Caminata dinámica a buen paso, terreno mixto con tierra o hierba, y juegos interactivos de olfato.";
         vetNote = "<strong>Consejo clínico:</strong> Perfil equilibrado. Una rutina estable de 2 a 3 salidas diarias con hidratación constante garantizará una esperanza de vida plena y activa.";
       }
