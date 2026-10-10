@@ -1,138 +1,955 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BarkScan — Salud canina preventiva</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BarkScan — Salud canina preventiva & Bienestar inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .font-num {
+      font-family: 'Space Mono', monospace;
+      letter-spacing: -0.03em;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #059669;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.35);
+      border: 3px solid #ffffff;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: #047857;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #059669;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.35);
+      border: 3px solid #ffffff;
+      transition: transform 0.15s ease;
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased">
+<body class="bg-stone-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
 
-<!-- HERO -->
-<header class="relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-cyan-500/10 to-transparent pointer-events-none"></div>
-  <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-6">
-    <div class="flex items-center gap-2 text-2xl font-bold">
-      <span>🐶</span> BarkScan
-    </div>
-    <a href="#waitlist" class="text-sm text-slate-300 hover:text-white">Lista de espera</a>
-  </nav>
+  <!-- TOP BANNER -->
+  <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border-b border-emerald-100 text-xs py-2.5 text-center text-emerald-800 font-semibold px-4">
+    🐾 Nueva actualización: Calculadora de actividad e hidratación canina adaptada a razas, peso y edades.
+  </div>
 
-  <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 text-center relative">
-    <div class="flex flex-wrap justify-center gap-3 mb-6">
-      <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/30">Biometría en tiempo real</span>
-      <span class="px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/30">Alertas de hidratación</span>
-      <span class="px-3 py-1 rounded-full text-xs font-medium bg-violet-500/10 text-violet-400 ring-1 ring-violet-500/30">Veterinario-validado</span>
-    </div>
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-      Detecta problemas de salud<br class="hidden md:block" /> de tu perro <span class="text-emerald-400">antes de que aparezcan</span>
-    </h1>
-    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
-      BarkScan monitoriza la frecuencia cardíaca, hidratación y actividad de tu perro en tiempo real, y te avisa antes de que un pequeño síntoma se convierta en una urgencia veterinaria.
-    </p>
-    <div class="mt-10">
-      <a href="#waitlist" class="inline-block px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-lg transition shadow-lg shadow-emerald-500/25">
-        Unirse a la lista de espera
+  <!-- NAVIGATION -->
+  <header class="relative bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 transition-all">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-900 group">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200 group-hover:scale-105 transition-transform">🐶</span>
+        <span>Bark<span class="text-emerald-600">Scan</span></span>
       </a>
-    </div>
-  </div>
-</header>
 
-<!-- FEATURES -->
-<section class="max-w-6xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold text-center mb-12">Todo lo que tu perro no puede decirte</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="p-6 rounded-2xl bg-slate-900 ring-1 ring-slate-800 hover:ring-emerald-500/40 transition">
-      <div class="text-4xl mb-4">❤️</div>
-      <h3 class="text-xl font-semibold mb-2">Frecuencia cardíaca en reposo</h3>
-      <p class="text-slate-400">Registro continuo del pulso en reposo para detectar arritmias, estrés o dolor silencioso con semanas de antelación.</p>
-    </div>
-    <div class="p-6 rounded-2xl bg-slate-900 ring-1 ring-slate-800 hover:ring-cyan-500/40 transition">
-      <div class="text-4xl mb-4">💧</div>
-      <h3 class="text-xl font-semibold mb-2">Alertas de golpe de calor e hidratación</h3>
-      <p class="text-slate-400">Sensores térmicos y de actividad predicen riesgo de golpe de calor y te recuerdan cuándo tu perro necesita beber agua.</p>
-    </div>
-    <div class="p-6 rounded-2xl bg-slate-900 ring-1 ring-slate-800 hover:ring-violet-500/40 transition">
-      <div class="text-4xl mb-4">🗺️</div>
-      <h3 class="text-xl font-semibold mb-2">Mapa de paseos</h3>
-      <p class="text-slate-400">Historial GPS de tus rutas con métricas de distancia, ritmo y calidad del ejercicio comparado con perros de su raza y edad.</p>
-    </div>
-  </div>
-</section>
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#features" class="hover:text-emerald-600 transition-colors">Características</a>
+        <a href="#calculator" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5">
+          <span>Calculadora</span>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-bold">Avanzada</span>
+        </a>
+        <a href="#gallery" class="hover:text-emerald-600 transition-colors">Comunidad</a>
+        <a href="#testimonials" class="hover:text-emerald-600 transition-colors">Testimonios</a>
+      </div>
 
-<!-- CALCULATOR -->
-<section class="max-w-4xl mx-auto px-6 py-20" id="calculator">
-  <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-900/50 ring-1 ring-slate-800">
-    <h2 class="text-3xl font-bold text-center mb-2">Calculadora de bienestar canino</h2>
-    <p class="text-center text-slate-400 mb-8">Ajusta el peso de tu perro y descubre sus necesidades diarias recomendadas.</p>
+      <div class="flex items-center gap-4">
+        <a href="#calculator" class="hidden sm:inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 font-semibold">
+          Simular rutina
+        </a>
+        <a href="#waitlist" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all duration-200 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5">
+          Acceso temprano
+        </a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="flex flex-col items-center gap-4">
-      <label for="weight" class="text-lg font-medium">
-        Peso: <span id="weightValue" class="text-emerald-400 font-bold">15</span> kg
-      </label>
-      <input id="weight" type="range" min="1" max="50" value="15" step="0.5"
-             class="w-full max-w-md accent-emerald-500 h-2 cursor-pointer" />
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/40 via-stone-50 to-stone-50 pt-12 pb-24 md:pt-16 md:pb-32 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy -->
+        <div class="lg:col-span-7 text-left space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-100/80 text-emerald-800 ring-1 ring-emerald-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Biometría en tiempo real
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-100/80 text-cyan-800 ring-1 ring-cyan-300">
+              💧 Alertas de hidratación
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-100/80 text-amber-900 ring-1 ring-amber-300">
+              🩺 Validado por veterinarios
+            </span>
+          </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md mt-6">
-        <div class="p-4 rounded-xl bg-slate-800/60 text-center">
-          <div class="text-3xl font-bold text-emerald-400" id="activityHours">1.5 h</div>
-          <div class="text-sm text-slate-400 mt-1">Actividad diaria recomendada</div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
+            Detecta problemas de salud de tu perro <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">antes de que aparezcan</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
+            BarkScan monitoriza la frecuencia cardíaca, hidratación corporal y ritmo de actividad de tu compañero en tiempo real. Anticipa golpes de calor, dolor silencioso y fatiga antes de que sea una urgencia.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="#calculator" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base transition-all duration-200 shadow-xl shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5">
+              <span>Calcular plan de mi perro</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="#features" class="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-700 ring-1 ring-slate-200 shadow-sm font-semibold text-base transition duration-200">
+              Ver cómo funciona
+            </a>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="pt-4 flex items-center gap-4 text-xs text-slate-600">
+            <div class="flex -space-x-2 overflow-hidden">
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar tutora" />
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Avatar tutor" />
+              <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Avatar veterinaria" />
+            </div>
+            <div>
+              <p class="font-bold text-slate-900">+1,420 tutores y clínicas veterinarias</p>
+              <p class="text-slate-500">Unidos a la lista de acceso prioritario</p>
+            </div>
+          </div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-800/60 text-center">
-          <div class="text-3xl font-bold text-cyan-400" id="waterMl">900 ml</div>
-          <div class="text-sm text-slate-400 mt-1">Agua mínima al día</div>
+
+        <!-- Right Column: Hero Dog Photo with Floating Cards -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Hero Image Card with rounded-3xl and soft warm shadows -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-emerald-950/10 ring-1 ring-slate-200/80 bg-white group">
+            <img 
+              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=80" 
+              alt="Perro feliz en la naturaleza bajo la luz cálida del sol" 
+              class="w-full h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+
+            <!-- Floating Status Badge (Top-Right) -->
+            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-2xl ring-1 ring-slate-200/80 flex items-center gap-2 text-xs font-bold text-slate-800 shadow-lg">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-emerald-700">Collar Activo</span>
+            </div>
+
+            <!-- Bottom Floating Metrics Card -->
+            <div class="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl ring-1 ring-slate-200/80 shadow-xl space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl">🐕</span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900">Oliver · Golden Retriever</div>
+                    <div class="text-[11px] text-slate-500">Adulto (3 años) · 28 kg</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                  Estado óptimo
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Pulso reposo</div>
+                  <div class="text-sm font-bold text-emerald-600 font-num">72 bpm</div>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Hidratación</div>
+                  <div class="text-sm font-bold text-cyan-600 font-num">98 %</div>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-[10px] text-slate-500 font-semibold">Paseo hoy</div>
+                  <div class="text-sm font-bold text-violet-600 font-num">65 min</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION WITH INTEGRATED DOG PHOTOGRAPHY -->
+  <section class="max-w-7xl mx-auto px-6 py-24 relative" id="features">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300 uppercase tracking-wider">
+        Tecnología Médica Veterinaria
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        Todo lo que tu perro no puede decirte
+      </h2>
+      <p class="text-slate-600 text-lg">
+        Los perros ocultan por instinto los primeros signos de fatiga y dolor. BarkScan traduce sus señales biométricas en datos claros para que tomes acción a tiempo.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Feature Card 1: Frecuencia cardíaca -->
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-emerald-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
+        <div class="relative h-56 overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80" 
+            alt="Perro descansando placenteramente en una cama acogedora" 
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-emerald-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
+            <span>❤️</span> Biometría cardíaca
+          </div>
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
+            68 bpm en reposo
+          </div>
+        </div>
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">Frecuencia cardíaca en reposo</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Registro continuo y de alta precisión del pulso en reposo. Detecta con días y semanas de antelación arritmias incipientes, sobreesfuerzo, picos de estrés o dolor articular silencioso.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-emerald-700 flex items-center gap-1">
+            <span>✓ Alerta inmediata si supera rangos de raza</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Card 2: Golpe de calor e hidratación -->
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-cyan-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
+        <div class="relative h-56 overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80" 
+            alt="Perro activo y feliz jadeando saludablemente en el campo" 
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-cyan-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
+            <span>💧</span> Termo-hidratación
+          </div>
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
+            Riesgo térmico: Seguro
+          </div>
+        </div>
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors">Alertas de golpe de calor e hidratación</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Algoritmo térmico adaptado a la temperatura ambiental, humedad y espesor del pelaje. Te envía una notificación con aviso sonoro antes de que el perro entre en deshidratación crítica.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-cyan-700 flex items-center gap-1">
+            <span>✓ Especial protección en razas braquicéfalas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Card 3: Mapa de paseos y actividad -->
+      <div class="group rounded-3xl bg-white ring-1 ring-slate-200/80 hover:ring-violet-400 hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden flex flex-col hover:-translate-y-1">
+        <div class="relative h-56 overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80" 
+            alt="Perro corriendo feliz en un prado verde durante un paseo activo" 
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-violet-700 ring-1 ring-slate-200 shadow-sm flex items-center gap-1.5">
+            <span>🗺️</span> GPS & Rutinas
+          </div>
+          <div class="absolute bottom-3 right-4 font-num text-xs bg-slate-900/80 text-white px-2.5 py-1 rounded-lg backdrop-blur-sm">
+            5.4 km / 78 min activos
+          </div>
+        </div>
+        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-violet-600 transition-colors">Mapa de paseos y calidad del ejercicio</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Mapeo de rutas con índice de calidad física: diferencia entre paseo olfativo de baja intensidad y sprint de alta exigencia, adaptando el descanso para evitar lesiones musculares.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 text-xs font-bold text-violet-700 flex items-center gap-1">
+            <span>✓ Comparativa con el percentil de su raza y edad</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ADVANCED ACTIVITY CALCULATOR SECTION (LIGHT THEME) -->
+  <section class="max-w-6xl mx-auto px-6 py-20 relative" id="calculator">
+    <div class="relative rounded-3xl bg-white p-8 sm:p-12 ring-1 ring-slate-200/80 shadow-2xl shadow-slate-200/60 overflow-hidden">
+      
+      <!-- Decorative Background Glow -->
+      <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-cyan-100/60 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Calculator Header -->
+      <div class="relative z-10 text-center max-w-2xl mx-auto mb-10 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300">
+          <span>⚡</span> Algoritmo Clínico en Tiempo Real
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          Calculadora Avanzada de Actividad e Hidratación
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Personaliza los parámetros biológicos de tu perro para obtener su prescripción diaria recomendada de ejercicio, ingesta hídrica e intensidad segura.
+        </p>
+      </div>
+
+      <!-- Calculator Form & Results Grid -->
+      <div class="relative z-10 grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Inputs Column (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-50/80 p-6 sm:p-8 rounded-3xl ring-1 ring-slate-200 space-y-6">
+          
+          <!-- Input 1: Peso Corporal (Slider + Number Sync) -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="weightInput" class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <span>⚖️ Peso Corporal</span>
+                <span class="text-xs font-normal text-slate-500">(1 a 60 kg)</span>
+              </label>
+              <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl ring-1 ring-slate-200 shadow-sm font-num">
+                <input 
+                  id="weightNumber" 
+                  type="number" 
+                  min="1" 
+                  max="60" 
+                  step="0.5" 
+                  value="18" 
+                  class="w-14 bg-transparent text-emerald-700 font-bold text-right text-lg outline-none font-num"
+                />
+                <span class="text-slate-500 text-sm font-semibold">kg</span>
+              </div>
+            </div>
+
+            <input 
+              id="weightInput" 
+              type="range" 
+              min="1" 
+              max="60" 
+              value="18" 
+              step="0.5" 
+              class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer outline-none"
+            />
+
+            <div class="flex justify-between text-[11px] font-num text-slate-400 font-semibold px-1">
+              <span>1 kg</span>
+              <span>15 kg</span>
+              <span>30 kg</span>
+              <span>45 kg</span>
+              <span>60 kg</span>
+            </div>
+          </div>
+
+          <!-- Input 2: Edad del perro -->
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <span>🎂 Etapa y Edad</span>
+            </label>
+            <div class="grid grid-cols-3 gap-2" id="ageButtonsGroup">
+              <button type="button" data-val="puppy" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                <div class="text-base mb-1">🍼</div>
+                <div>Cachorro</div>
+                <div class="text-[10px] text-slate-500 font-normal">&lt; 1 año</div>
+              </button>
+              <button type="button" data-val="adult" class="age-btn active-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-2 ring-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+                <div class="text-base mb-1">🐕</div>
+                <div>Adulto</div>
+                <div class="text-[10px] text-emerald-100 font-normal">1 a 7 años</div>
+              </button>
+              <button type="button" data-val="senior" class="age-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                <div class="text-base mb-1">🦮</div>
+                <div>Senior</div>
+                <div class="text-[10px] text-slate-500 font-normal">&gt; 7 años</div>
+              </button>
+            </div>
+            <input type="hidden" id="ageValue" value="adult" />
+          </div>
+
+          <!-- Input 3: Raza / Nivel de energía -->
+          <div class="space-y-2">
+            <label for="energySelect" class="text-sm font-bold text-slate-800 flex items-center justify-between">
+              <span class="flex items-center gap-2">⚡ Nivel de Energía / Raza</span>
+            </label>
+            <div class="relative">
+              <select 
+                id="energySelect" 
+                class="w-full bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-2xl px-4 py-3.5 ring-1 ring-slate-200 focus:ring-2 focus:ring-emerald-500 shadow-sm outline-none appearance-none cursor-pointer pr-10"
+              >
+                <option value="low">Baja energía / Braquicéfalos (ej. Bulldog, Pug, Basset, Galgo de descanso)</option>
+                <option value="moderate" selected>Energía moderada (ej. Golden, Labrador, Beagle, Mestizo familiar)</option>
+                <option value="high">Alta energía / Trabajo y cobro (ej. Border Collie, Pastor Belga, Jack Russell, Setter)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-500">Adapta los descansos cardiorrespiratorios según la fisonomía y morfología de la raza.</p>
+          </div>
+
+          <!-- Input 4: Altura a la cruz o Tamaño -->
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <span>📏 Tamaño / Altura a la cruz</span>
+            </label>
+            <div class="grid grid-cols-3 gap-2" id="sizeButtonsGroup">
+              <button type="button" data-size="mini" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                <div class="text-sm mb-0.5">🐾 Mini</div>
+                <div class="text-[10px] text-slate-500 font-normal">&lt; 30 cm</div>
+              </button>
+              <button type="button" data-size="medium" class="size-btn active-size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-2 ring-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+                <div class="text-sm mb-0.5">🐕 Mediano</div>
+                <div class="text-[10px] text-emerald-100 font-normal">30 - 55 cm</div>
+              </button>
+              <button type="button" data-size="large" class="size-btn px-3 py-2.5 rounded-2xl text-xs font-bold transition-all ring-1 ring-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                <div class="text-sm mb-0.5">🐺 Grande</div>
+                <div class="text-[10px] text-slate-500 font-normal">&gt; 55 cm</div>
+              </button>
+            </div>
+            <input type="hidden" id="sizeValue" value="medium" />
+          </div>
+
+        </div>
+
+        <!-- Output Results Column (5 cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Main Output Metric: Minutos de Actividad -->
+          <div class="p-6 rounded-3xl bg-emerald-50/70 ring-1 ring-emerald-200/80 relative overflow-hidden shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Actividad y Paseos
+              </div>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold" id="activityPillsCount">2-3 paseos/día</span>
+            </div>
+            
+            <div class="flex items-baseline gap-2 mb-2">
+              <span id="outputMinutes" class="text-5xl sm:text-6xl font-bold text-emerald-600 font-num">70</span>
+              <span class="text-xl font-bold text-slate-800">minutos / día</span>
+            </div>
+            
+            <p id="outputActivityDesc" class="text-xs text-slate-600 leading-relaxed font-medium">
+              Tiempo total recomendado de paseos estructurados y ejercicio activo ajustado a su energía y edad.
+            </p>
+          </div>
+
+          <!-- Secondary Metric: Agua Estimada -->
+          <div class="p-6 rounded-3xl bg-cyan-50/70 ring-1 ring-cyan-200/80 relative overflow-hidden shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-xs font-bold text-cyan-800 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-cyan-600"></span> Ingesta Diaria de Agua
+              </div>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 font-bold" id="waterBowlsCount">~4.5 cuencos</span>
+            </div>
+
+            <div class="flex items-baseline gap-2 mb-2">
+              <span id="outputWaterMl" class="text-4xl sm:text-5xl font-bold text-cyan-600 font-num">1.170</span>
+              <span class="text-lg font-bold text-slate-800">ml / día</span>
+            </div>
+
+            <p id="outputWaterDesc" class="text-xs text-slate-600 leading-relaxed font-medium">
+              Consumo hídrico mínimo estimado. Aumentar un 20% en días cálidos o sesiones intensas.
+            </p>
+          </div>
+
+          <!-- Tertiary Metric: Indicador de Intensidad -->
+          <div class="p-6 rounded-3xl bg-amber-50/70 ring-1 ring-amber-200/80 relative overflow-hidden shadow-sm">
+            <div class="text-xs font-bold text-amber-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+              <span>🎯</span> Intensidad Recomendada
+            </div>
+
+            <div class="flex items-center gap-3 mb-2">
+              <span id="intensityBadge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-100 text-amber-900 ring-1 ring-amber-300">
+                Moderada · Caminata dinámica
+              </span>
+            </div>
+
+            <p id="outputIntensityAdvice" class="text-xs text-slate-700 leading-relaxed font-medium">
+              Paseos activos con interacción sensorial y juego moderado sin impacto repetitivo.
+            </p>
+          </div>
+
+          <!-- Veterinary Tip Box -->
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-start gap-3 shadow-sm">
+            <span class="text-xl leading-none">🩺</span>
+            <div id="vetAdviceText" class="leading-relaxed">
+              <strong>Consejo clínico:</strong> En perros adultos de energía moderada, divide el ejercicio en 2 paseos principales evitando las horas de máxima insolación.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY GALLERY & REAL DOG MOMENTS SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-20 relative" id="gallery">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800 ring-1 ring-cyan-300 uppercase tracking-wider">
+        Comunidad BarkScan
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        Perros felices, activos y monitorizados
+      </h2>
+      <p class="text-slate-600 text-lg">
+        Cada perro tiene su propio ritmo biológico. Descubre cómo BarkScan acompaña a perros de todos los tamaños, energías y etapas de vida.
+      </p>
+    </div>
+
+    <!-- Gallery Grid with warm, active dogs -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Photo 1: Juego libre -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
+        <img 
+          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80" 
+          alt="Dos perros jugando alegremente en el parque" 
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/90 text-white shadow-sm mb-1.5">
+            Socialización activa
+          </span>
+          <h4 class="text-sm font-bold text-white">Thor & Maya</h4>
+          <p class="text-xs text-slate-200">Paseo matutino · 55 min completados</p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Sonrisa canina -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
+        <img 
+          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" 
+          alt="Perro sonriente descansando feliz en la hierba" 
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-600/90 text-white shadow-sm mb-1.5">
+            Hidratación perfecta
+          </span>
+          <h4 class="text-sm font-bold text-white">Nala</h4>
+          <p class="text-xs text-slate-200">Recuperación post-juego en sombra</p>
+        </div>
+      </div>
+
+      <!-- Photo 3: Cachorro en exploración -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
+        <img 
+          src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80" 
+          alt="Cachorro descubriendo el entorno al aire libre" 
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-600/90 text-white shadow-sm mb-1.5">
+            Cachorro · Crecimiento
+          </span>
+          <h4 class="text-sm font-bold text-white">Milo (6 meses)</h4>
+          <p class="text-xs text-slate-200">Micro-paseos olfativos guiados</p>
+        </div>
+      </div>
+
+      <!-- Photo 4: Senior sereno -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow ring-1 ring-slate-200/80 bg-white aspect-square">
+        <img 
+          src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=600&q=80" 
+          alt="Perro senior descansando con mirada tranquila y serena" 
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+        <div class="absolute bottom-4 inset-x-4 text-white">
+          <span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-600/90 text-white shadow-sm mb-1.5">
+            Senior · Cuidado articular
+          </span>
+          <h4 class="text-sm font-bold text-white">Rocky (9 años)</h4>
+          <p class="text-xs text-slate-200">Paseo suave · Cero sobrecarga</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-20 relative" id="testimonials">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-violet-100 text-violet-800 ring-1 ring-violet-300 uppercase tracking-wider">
+        Historias Reales
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        Lo que opinan tutores y veterinarios
+      </h2>
+      <p class="text-slate-600 text-lg">
+        La tranquilidad de saber exactamente cómo se siente tu mejor amigo en cada momento.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Testimonial 1 -->
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed italic">
+            “BarkScan detectó una leve deshidratación tras una excursión por la sierra antes de que Max mostrara síntomas visibles de fatiga. Saber con precisión cuánta agua necesita y los minutos recomendados según su peso nos ha dado una tranquilidad absoluta.”
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <img 
+            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=120&q=80" 
+            alt="Golden Retriever de Mateo" 
+            class="w-12 h-12 rounded-2xl object-cover ring-2 ring-emerald-500/30"
+          />
+          <div>
+            <div class="text-sm font-bold text-slate-900">Mateo & Max</div>
+            <div class="text-xs text-slate-500">Golden Retriever · 3 años (29 kg)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed italic">
+            “Al ser braquicéfalo, controlar la temperatura y la intensidad en los paseos veraniegos era una pesadilla constante. Las alertas de intensidad olfativa de BarkScan nos han permitido disfrutar de la calle sin riesgo respiratorio.”
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <img 
+            src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=120&q=80" 
+            alt="Bulldog de Laura" 
+            class="w-12 h-12 rounded-2xl object-cover ring-2 ring-cyan-500/30"
+          />
+          <div>
+            <div class="text-sm font-bold text-slate-900">Laura & Bruno</div>
+            <div class="text-xs text-slate-500">Bulldog Francés · 5 años (13 kg)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="p-8 rounded-3xl bg-white ring-1 ring-slate-200/80 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-1 text-amber-500 text-sm">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 text-sm leading-relaxed italic">
+            “Kira tiene una energía desbordante de raza de trabajo. La calculadora nos clavó el tiempo de actividad y la intensidad para evitar que llegue sobreestimulada a casa. La monitorización de pulso es una maravilla científica.”
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <img 
+            src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?auto=format&fit=crop&w=120&q=80" 
+            alt="Border Collie de Carlos" 
+            class="w-12 h-12 rounded-2xl object-cover ring-2 ring-violet-500/30"
+          />
+          <div>
+            <div class="text-sm font-bold text-slate-900">Carlos & Kira</div>
+            <div class="text-xs text-slate-500">Border Collie · 2 años (19 kg)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WAITLIST SECTION -->
+  <section id="waitlist" class="max-w-4xl mx-auto px-6 py-24 text-center relative">
+    <div class="relative rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-8 sm:p-14 ring-1 ring-emerald-200 shadow-2xl shadow-emerald-950/5 overflow-hidden">
+      
+      <div class="max-w-2xl mx-auto space-y-4">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 ring-1 ring-emerald-300">
+          🚀 Acceso prioritario cerrado
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+          Sé de los primeros en probar BarkScan
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Lanzamiento anticipado con un <strong class="text-emerald-700 font-bold">40% de descuento vitalicio</strong> y kit de bienvenida para los miembros de la lista de espera.
+        </p>
+        
+        <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3 justify-center pt-4 max-w-lg mx-auto">
+          <input 
+            type="email" 
+            required 
+            placeholder="Introduce tu correo electrónico..."
+            class="px-5 py-3.5 rounded-2xl bg-white ring-1 ring-slate-300 focus:ring-2 focus:ring-emerald-500 text-sm outline-none flex-1 min-w-0 text-slate-900 placeholder-slate-400 shadow-sm" 
+          />
+          <button 
+            type="submit" 
+            class="px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all duration-200 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 hover:-translate-y-0.5 whitespace-nowrap"
+          >
+            Unirme ahora
+          </button>
+        </form>
+
+        <p id="formMessage" class="mt-4 text-sm font-semibold h-5 transition-opacity opacity-0 text-emerald-700"></p>
+
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-medium">
+          <span>✓ Sin spam</span>
+          <span>✓ Cancelación en cualquier momento</span>
+          <span>✓ Soporte veterinario incluido</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WAITLIST -->
-<section id="waitlist" class="max-w-2xl mx-auto px-6 py-20 text-center">
-  <h2 class="text-3xl font-bold mb-4">Sé de los primeros en probar BarkScan</h2>
-  <p class="text-slate-400 mb-8">Lanzamiento anticipado con 40% de descuento para la lista de espera.</p>
-  <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3 justify-center">
-    <input type="email" required placeholder="tu@email.com"
-           class="px-5 py-3 rounded-xl bg-slate-900 ring-1 ring-slate-700 focus:ring-emerald-500 outline-none flex-1 min-w-0" />
-    <button type="submit" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition">
-      Unirme
-    </button>
-  </form>
-  <p id="formMessage" class="mt-4 text-sm h-5 transition-opacity opacity-0"></p>
-</section>
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200/80 py-12 px-6 bg-white text-slate-500 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2 text-lg font-bold text-slate-900">
+        <span>🐶</span> Bark<span class="text-emerald-600">Scan</span>
+        <span class="text-xs text-slate-400 font-normal ml-2">© 2026 Todos los derechos reservados</span>
+      </div>
+      <div class="flex items-center gap-6 text-xs text-slate-500 font-medium">
+        <a href="#features" class="hover:text-emerald-600 transition-colors">Características</a>
+        <a href="#calculator" class="hover:text-emerald-600 transition-colors">Calculadora</a>
+        <a href="#gallery" class="hover:text-emerald-600 transition-colors">Comunidad</a>
+        <a href="#waitlist" class="hover:text-emerald-600 transition-colors">Lista de espera</a>
+      </div>
+    </div>
+  </footer>
 
-<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-  © 2026 BarkScan — Salud canina preventiva
-</footer>
+  <!-- SCRIPT: ADVANCED ACTIVITY & HYDRATION CALCULATOR -->
+  <script>
+    // Elements
+    const weightSlider = document.getElementById('weightInput');
+    const weightNumber = document.getElementById('weightNumber');
+    const ageValueInput = document.getElementById('ageValue');
+    const energySelect = document.getElementById('energySelect');
+    const sizeValueInput = document.getElementById('sizeValue');
 
-<script>
-  const weightInput = document.getElementById('weight');
-  const weightValue = document.getElementById('weightValue');
-  const activityHours = document.getElementById('activityHours');
-  const waterMl = document.getElementById('waterMl');
+    const ageButtons = document.querySelectorAll('.age-btn');
+    const sizeButtons = document.querySelectorAll('.size-btn');
 
-  function updateCalc() {
-    const w = parseFloat(weightInput.value);
-    weightValue.textContent = w;
-    // Actividad: perros pequeños ~2h, grandes ~1h (interpolación)
-    const hours = (2.2 - (w / 50) * 1.2).toFixed(1);
-    activityHours.textContent = `${hours} h`;
-    // Agua: ~60 ml por kg
-    waterMl.textContent = `${Math.round(w * 60)} ml`;
-  }
-  weightInput.addEventListener('input', updateCalc);
-  updateCalc();
+    // Outputs
+    const outputMinutes = document.getElementById('outputMinutes');
+    const outputActivityDesc = document.getElementById('outputActivityDesc');
+    const activityPillsCount = document.getElementById('activityPillsCount');
+    const outputWaterMl = document.getElementById('outputWaterMl');
+    const outputWaterDesc = document.getElementById('outputWaterDesc');
+    const waterBowlsCount = document.getElementById('waterBowlsCount');
+    const intensityBadge = document.getElementById('intensityBadge');
+    const outputIntensityAdvice = document.getElementById('outputIntensityAdvice');
+    const vetAdviceText = document.getElementById('vetAdviceText');
 
-  const form = document.getElementById('waitlistForm');
-  const msg = document.getElementById('formMessage');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    msg.textContent = '✅ ¡Listo! Te avisaremos cuando BarkScan esté disponible.';
-    msg.classList.remove('opacity-0');
-    msg.classList.add('text-emerald-400');
-    form.reset();
-    setTimeout(() => msg.classList.add('opacity-0'), 4000);
-  });
-</script>
+    // Age button handler (Light theme active/inactive classes)
+    ageButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        ageButtons.forEach(b => {
+          b.classList.remove('active-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+          b.classList.add('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+          const sub = b.querySelector('div:last-child');
+          if (sub) { sub.classList.remove('text-emerald-100'); sub.classList.add('text-slate-500'); }
+        });
+        btn.classList.add('active-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+        btn.classList.remove('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        const subActive = btn.querySelector('div:last-child');
+        if (subActive) { subActive.classList.remove('text-slate-500'); subActive.classList.add('text-emerald-100'); }
+
+        ageValueInput.value = btn.getAttribute('data-val');
+        calculatePlan();
+      });
+    });
+
+    // Size button handler (Light theme active/inactive classes)
+    sizeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeButtons.forEach(b => {
+          b.classList.remove('active-size-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+          b.classList.add('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+          const sub = b.querySelector('div:last-child');
+          if (sub) { sub.classList.remove('text-emerald-100'); sub.classList.add('text-slate-500'); }
+        });
+        btn.classList.add('active-size-btn', 'ring-2', 'ring-emerald-600', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+        btn.classList.remove('ring-1', 'ring-slate-200', 'bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        const subActive = btn.querySelector('div:last-child');
+        if (subActive) { subActive.classList.remove('text-slate-500'); subActive.classList.add('text-emerald-100'); }
+
+        sizeValueInput.value = btn.getAttribute('data-size');
+        calculatePlan();
+      });
+    });
+
+    // Weight sync
+    weightSlider.addEventListener('input', (e) => {
+      weightNumber.value = e.target.value;
+      calculatePlan();
+    });
+
+    weightNumber.addEventListener('input', (e) => {
+      let val = parseFloat(e.target.value);
+      if (isNaN(val)) val = 1;
+      if (val < 1) val = 1;
+      if (val > 60) val = 60;
+      weightSlider.value = val;
+      calculatePlan();
+    });
+
+    energySelect.addEventListener('change', calculatePlan);
+
+    // Advanced Calculation Engine
+    function calculatePlan() {
+      const weight = Math.max(1, Math.min(60, parseFloat(weightNumber.value) || 15));
+      const age = ageValueInput.value; // 'puppy' | 'adult' | 'senior'
+      const energy = energySelect.value; // 'low' | 'moderate' | 'high'
+      const size = sizeValueInput.value; // 'mini' | 'medium' | 'large'
+
+      // 1. Minutos de actividad física recomendados
+      let baseMinutes = 70;
+      let walkDistribution = "2-3 paseos/día";
+      let activityNotes = "";
+
+      if (age === 'puppy') {
+        // Regla médica de desarrollo: evitar microtraumatismos en cartílagos de crecimiento
+        baseMinutes = 38;
+        walkDistribution = "3-4 paseos cortos";
+        activityNotes = "Cachorro: sesiones cortas y frecuentes. Evita carreras forzadas o saltos sobre asfalto duro.";
+      } else if (age === 'senior') {
+        // En perros senior, proteger articulaciones y preservar tono muscular
+        baseMinutes = 42;
+        walkDistribution = "2-3 paseos suaves";
+        activityNotes = "Senior: paseos constantes de bajo impacto para mantener movilidad articular y salud cardíaca.";
+      } else {
+        // Adulto
+        baseMinutes = 75;
+        walkDistribution = "2-3 paseos/día";
+        activityNotes = "Adulto en plenitud: rutina equilibrada de paseo higiénico, exploración y ejercicio físico.";
+      }
+
+      // Multiplicador por nivel de energía
+      let energyMultiplier = 1.0;
+      if (energy === 'low') {
+        energyMultiplier = 0.65;
+      } else if (energy === 'high') {
+        energyMultiplier = 1.45;
+      }
+
+      // Multiplicador por tamaño
+      let sizeMultiplier = 1.0;
+      if (size === 'mini') {
+        sizeMultiplier = 0.88;
+      } else if (size === 'large') {
+        sizeMultiplier = 1.08;
+      }
+
+      let totalMinutes = Math.round(baseMinutes * energyMultiplier * sizeMultiplier);
+      // Rango de seguridad
+      totalMinutes = Math.max(25, Math.min(135, totalMinutes));
+
+      outputMinutes.textContent = totalMinutes;
+      activityPillsCount.textContent = walkDistribution;
+      outputActivityDesc.textContent = activityNotes;
+
+      // 2. Consumo de agua diario estimado (ml/día)
+      // Base clínica: 55 a 70 ml por kg de peso corporal
+      let mlPerKg = 60;
+      if (energy === 'low') mlPerKg = 52;
+      if (energy === 'high') mlPerKg = 78;
+
+      if (age === 'puppy') mlPerKg += 8; // Mayor recambio hídrico metabólico
+      if (age === 'senior') mlPerKg += 4; // Función renal y prevención
+
+      let totalWaterMl = Math.round(weight * mlPerKg);
+      outputWaterMl.textContent = totalWaterMl.toLocaleString('es-ES');
+      const bowls = (totalWaterMl / 250).toFixed(1);
+      waterBowlsCount.textContent = `~${bowls} cuencos (250ml)`;
+
+      // 3. Indicador de Intensidad Recomendada y Consejo Veterinario (Light theme badges)
+      let intensityText = "";
+      let intensityClass = "";
+      let intensityAdvice = "";
+      let vetNote = "";
+
+      if (energy === 'low' || (age === 'senior' && energy !== 'high')) {
+        intensityText = "Baja · Paseos olfativos suaves";
+        intensityClass = "bg-amber-100 text-amber-900 ring-1 ring-amber-300";
+        intensityAdvice = "Paseos olfativos a ritmo tranquilo, estimulación mental con juegos de olfato y descanso en sombra. Proteger de golpes de calor.";
+        vetNote = `<strong>Consejo clínico:</strong> ${energy === 'low' ? 'Las razas braquicéfalas y de baja energía tienen riesgo de sobrecalentamiento. Monitorea su frecuencia respiratoria y evita las horas de sol directo.' : 'En perros mayores de 7 años, la estimulación cognitiva y los paseos olfativos calman la ansiedad y cuidan sus articulaciones sin sobrecargarlas.'}`;
+      } else if (age === 'puppy') {
+        intensityText = "Baja-Moderada · Juego y socialización";
+        intensityClass = "bg-cyan-100 text-cyan-900 ring-1 ring-cyan-300";
+        intensityAdvice = "Juego libre en césped, estimulación cognitiva y pausas de descanso frecuentes. Evitar el cobro compulsivo de pelota.";
+        vetNote = "<strong>Consejo clínico:</strong> En cachorros menores de 1 año, los paseos deben priorizar la socialización y el enriquecimiento ambiental por encima del desgaste cardiovascular.";
+      } else if (energy === 'high' && age === 'adult') {
+        intensityText = "Alta · Ejercicio dinámico y demanda";
+        intensityClass = "bg-emerald-100 text-emerald-900 ring-1 ring-emerald-300";
+        intensityAdvice = "Carrera continua, cobro activo, senderismo o agility. Requiere calentamiento progresivo y abundante agua fresca.";
+        vetNote = "<strong>Consejo clínico:</strong> Los perros de trabajo toleran alta demanda pero pueden ignorar la fatiga. BarkScan te avisará cuando su pulso cardíaco supere el umbral seguro.";
+      } else {
+        // Adulto moderado
+        intensityText = "Moderada · Caminata activa y trote";
+        intensityClass = "bg-emerald-100 text-emerald-900 ring-1 ring-emerald-300";
+        intensityAdvice = "Caminata dinámica a buen paso, terreno mixto con tierra o hierba, y juegos interactivos de olfato.";
+        vetNote = "<strong>Consejo clínico:</strong> Perfil equilibrado. Una rutina estable de 2 a 3 salidas diarias con hidratación constante garantizará una esperanza de vida plena y activa.";
+      }
+
+      intensityBadge.className = `px-3.5 py-1.5 rounded-xl text-xs font-bold ${intensityClass}`;
+      intensityBadge.textContent = intensityText;
+      outputIntensityAdvice.textContent = intensityAdvice;
+      vetAdviceText.innerHTML = vetNote;
+    }
+
+    // Initialize calculation
+    calculatePlan();
+
+    // Waitlist Form Handler
+    const form = document.getElementById('waitlistForm');
+    const msg = document.getElementById('formMessage');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg.textContent = '✅ ¡Genial! Te hemos reservado tu acceso temprano con 40% de descuento.';
+      msg.classList.remove('opacity-0');
+      form.reset();
+      setTimeout(() => msg.classList.add('opacity-0'), 5000);
+    });
+  </script>
 </body>
 </html>
